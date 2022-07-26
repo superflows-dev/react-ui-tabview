@@ -4,25 +4,77 @@
 
 [![NPM](https://img.shields.io/npm/v/react-ui-tabview.svg)](https://www.npmjs.com/package/react-ui-tabview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+
+## Demo
+
+[![Demo](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/edit/react-ts-kgnbua?file=App.tsx)
+
+## Note
+
+This package is under active development. Expect frequent updates.
+
 ## Install
 
 ```bash
 npm install --save react-ui-tabview
 ```
+Install the dependencies
+
+## Dependencies
+
+```bash
+npm install --save bootstrap
+npm install --save react-bootstrap
+npm install --save react-bootstrap-icons
+```
 
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
 
-import MyComponent from 'react-ui-tabview'
-import 'react-ui-tabview/dist/index.css'
+import React from 'react'
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
+import { TabView } from 'react-ui-tabview'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Themes from 'react-ui-themes-superflows';
+
+const App = () => {
+
+  const tabsData = [
+    {
+      caption: 'My Opd',
+      icon: "BagPlus",
+      component: <div>Hello 1</div>
+    },
+    {
+      caption: 'Connect',
+      icon: "ArrowUpRightCircle",
+      component: <div>Hello 2</div>
+    },
+    {
+      caption: 'Profile',
+      icon: "Person",
+      component: <div>Hello 3</div>
+    },
+  ];
+
+  const navigationData = {
+    menuIcon: "List",
+    title: "Mission Spine"
+  };
+
+  return (
+    <TabView 
+      tabsData={tabsData} 
+      navigationData={navigationData}
+      theme={Themes.getTheme("Default")}
+      setSelectedTab={0}
+      />
+  )
 }
+
+export default App
+
 ```
 
 ## License
