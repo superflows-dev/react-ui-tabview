@@ -4,6 +4,7 @@
 
 [![NPM](https://img.shields.io/npm/v/react-ui-tabview.svg)](https://www.npmjs.com/package/react-ui-tabview) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+<img src="https://user-images.githubusercontent.com/108924653/180928627-9c43b8b3-17f4-4de1-bdbe-94e18a709948.png" width="300">
 
 ## Demo
 
