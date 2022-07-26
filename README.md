@@ -41,21 +41,25 @@ import Themes from 'react-ui-themes-superflows';
 
 const App = () => {
 
+  function onSelectedTab (index) {
+    console.log('selected tab', index);
+  }
+
   const tabsData = [
     {
       caption: 'My Opd',
       icon: "BagPlus",
-      component: <div>Hello 1</div>
+      component: <div className='text-center pt-5'>My Opd</div>
     },
     {
       caption: 'Connect',
       icon: "ArrowUpRightCircle",
-      component: <div>Hello 2</div>
+      component: <div className='text-center pt-5'>Connect</div>
     },
     {
       caption: 'Profile',
       icon: "Person",
-      component: <div>Hello 3</div>
+      component: <div className='text-center pt-5'>Profile</div>
     },
   ];
 
@@ -70,11 +74,13 @@ const App = () => {
       navigationData={navigationData}
       theme={Themes.getTheme("Default")}
       setSelectedTab={0}
+      onSelectedTab={onSelectedTab}
       />
   )
 }
 
 export default App
+
 
 ```
 
