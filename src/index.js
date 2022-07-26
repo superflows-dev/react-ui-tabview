@@ -16,16 +16,18 @@ export const TabView = (props) => {
     setUnselectedColor(props.theme != null ? (props.theme.unselectedColor != null ? props.theme.unselectedColor : 'gray' ) : 'gray');
   }
 
+  const wrapSetSelected = (i) => {
+    setSelected(i);
+    if(props.onSelectedTab != null) props.onSelectedTab(i);
+  }
+
   useEffect(() => {
     resetColors();
   }, [])
 
   useEffect(() => {
-    setSelected(props.setSelectedTab);
+    wrapSetSelected(props.setSelectedTab);
   }, [props.setSelectedTab])
-
-  console.log(props);
-  console.log(selected);
 
   const { [props.navigationData.menuIcon]: IconMenu } = Icons
 
@@ -59,7 +61,7 @@ export const TabView = (props) => {
         }}>
         {
           props.tabsData.map((item, i) => {
-            console.log(item);
+            
             const { [item.icon]: Icon } = Icons
 
             return ( 
@@ -73,7 +75,7 @@ export const TabView = (props) => {
                   fontWeight: selected === i   ? 600 : 300
                 }}
                 onClick={() => {
-                  setSelected(i);
+                  wrapSetSelected(i);
                 }}
                 >
                 <Container fluid>
